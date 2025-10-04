@@ -1,8 +1,3 @@
-def get_book_text(path):
-    with open(path, "r", encoding="utf-8") as f:
-        content = f.read()
-    return content
-
 def total_words(path):
     with open(path, "r", encoding="utf-8") as f:
         num_words = len(f.read().split())
@@ -24,9 +19,9 @@ def character_repetition(path):
     
     return counts
 
-def sort_dict():
+def sort_dict(book_path):
 
-    counts = character_repetition("books/frankenstein.txt")
+    counts = character_repetition(book_path)
     result = []
 
     for char, num in counts.items():
@@ -36,7 +31,7 @@ def sort_dict():
     return result
 
 def report(book_path):
-    count = sort_dict()
+    count = sort_dict(book_path)
     words = total_words(book_path)
     print ("============ BOOKBOT ============")
     print (f"Book:Analyzing book found at {book_path}")

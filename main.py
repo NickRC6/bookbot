@@ -1,11 +1,14 @@
-from stats import get_book_text, total_words, character_repetition, report
+from stats import report
+import sys
 
-def main():
-    #get_book_text("books/frankenstein.txt")
-    #total_words("books/frankenstein.txt")
-    #character_repetition("books/frankenstein.txt")
-    report("books/frankenstein.txt")    
+if len(sys.argv) != 2 :
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+
+book_path = sys.argv[1]
+
+def main(book_path):
+    report(book_path)    
     
-
-main()
+main(book_path)
 
