@@ -1,10 +1,11 @@
-def main():
-    get_book_text("books/frankenstein.txt")
+from stats import get_book_text, total_words, character_repetition, report
 
-def get_book_text(path):
-    with open(path, "r", encoding="utf-8") as f:
-        content = f.read()
-    print(content)
+def main():
+    #get_book_text("books/frankenstein.txt")
+    #total_words("books/frankenstein.txt")
+    #character_repetition("books/frankenstein.txt")
+    report("books/frankenstein.txt")    
+    
 
 main()
 
